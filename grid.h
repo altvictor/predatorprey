@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <ctime>
 
+#include "constants.h"
 #include "creature.h"
 #include "predator.h"
 #include "prey.h"
@@ -21,9 +22,8 @@ public:
     void step();
     void print();
 
-    static const int MAX = 20;
 private:
-    creature* _world[MAX][MAX];
+    creature* _world[ho_const::MAX][ho_const::MAX];
 
 };
 

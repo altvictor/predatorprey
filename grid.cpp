@@ -7,8 +7,8 @@ grid::grid(){
 
 grid::~grid(){
     cout << "deleting grid" << endl;
-    for(int i = 0; i < MAX; i++){
-        for(int j = 0; j < MAX; j++){
+    for(int i = 0; i < ho_const::MAX; i++){
+        for(int j = 0; j < ho_const::MAX; j++){
             if(_world[i][j] != NULL){
                 delete _world[i][j];
             }
@@ -18,15 +18,15 @@ grid::~grid(){
 
 void grid::initialize(){
     //nothing
-    for(int i = 0; i < MAX; i++){
-        for(int j = 0; j < MAX; j++){
+    for(int i = 0; i < ho_const::MAX; i++){
+        for(int j = 0; j < ho_const::MAX; j++){
             _world[i][j] = NULL;
         }
     }
     //predator
     for(int i = 0; i < 5; i++){
-        int r = rand() % MAX;
-        int c = rand() % MAX;
+        int r = rand() % ho_const::MAX;
+        int c = rand() % ho_const::MAX;
         if(_world[r][c] == NULL){
             _world[r][c] = new predator(r, c);
         }
@@ -36,8 +36,8 @@ void grid::initialize(){
     }
     //prey
     for(int i = 0; i < 100; i++){
-        int r = rand() % MAX;
-        int c = rand() % MAX;
+        int r = rand() % ho_const::MAX;
+        int c = rand() % ho_const::MAX;
         if(_world[r][c] == NULL){
             _world[r][c] = new prey(r, c);
         }
@@ -49,19 +49,19 @@ void grid::initialize(){
 }
 
 void grid::step(){
-    for(int i = 0; i < MAX; i++){
-        for(int j = 0; j < MAX; j++){
+    for(int i = 0; i < ho_const::MAX; i++){
+        for(int j = 0; j < ho_const::MAX; j++){
             if(_world[i][j] == NULL){}//do nothing
             else if(_world[i][j]->gettype() == 'X'){
-                _world[i][j]->step();
+                _world[i][j]->step(_world);
             }
         }
     }
-    for(int i = 0; i < MAX; i++){
-        for(int j = 0; j < MAX; j++){
+    for(int i = 0; i < ho_const::MAX; i++){
+        for(int j = 0; j < ho_const::MAX; j++){
             if(_world[i][j] == NULL){}//do nothing
             else if(_world[i][j]->gettype() == 'O'){
-                _world[i][j]->step();
+                _world[i][j]->step(_world);
             }
         }
     }
@@ -69,9 +69,9 @@ void grid::step(){
 
 void grid::print(){
     cout << "-----------------------------GRID-----------------------------" << endl;
-    for(int i = 0; i < MAX; i++){
+    for(int i = 0; i < ho_const::MAX; i++){
         cout << "|";
-        for(int j = 0; j < MAX; j++){
+        for(int j = 0; j < ho_const::MAX; j++){
             if(_world[i][j] == NULL){
                 cout << " . ";
             }

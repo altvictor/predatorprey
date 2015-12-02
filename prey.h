@@ -11,7 +11,7 @@ public:
 
     prey(int row, int col);
 
-    void step();
+    void step(creature* world[][ho_const::MAX]);
     void die();
 
     void move();

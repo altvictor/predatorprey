@@ -4,7 +4,7 @@ prey::prey(int row, int col):creature(row, col){
     settype('O');
 }
 
-void prey::step(){
+void prey::step(creature* world[][ho_const::MAX]){
     cout << "step prey" << endl;
 }
 

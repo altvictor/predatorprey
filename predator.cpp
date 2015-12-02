@@ -4,7 +4,7 @@ predator::predator(int row, int col):creature(row, col){
     settype('X');
 }
 
-void predator::step(){
+void predator::step(creature* world[][ho_const::MAX]){
     cout << "step predator" << endl;
 }
 

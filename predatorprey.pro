@@ -13,5 +13,6 @@ HEADERS += \
     creature.h \
     predator.h \
     prey.h \
-    grid.h
+    grid.h \
+    constants.h
 

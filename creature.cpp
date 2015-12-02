@@ -5,7 +5,7 @@ creature::creature(int row, int col){
     _col = col;
 }
 
-void creature::step(){
+void creature::step(creature* world[][ho_const::MAX]){
     cout << "step creature" << endl;
 }
 

@@ -2,6 +2,8 @@
 #define CREATURE_H
 
 #include <iostream>
+#include "constants.h"
+class grid;
 using namespace std;
 
 class creature{
@@ -9,7 +11,7 @@ class creature{
 public:
     creature(int row, int col);
 
-    virtual void step();
+    virtual void step(creature* world[][ho_const::MAX]);
     virtual void die();
 
     void settime(int time);
