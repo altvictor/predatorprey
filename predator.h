@@ -11,10 +11,7 @@ public:
 
     predator(int row, int col);
 
-    void step(creature* world[][ho_const::MAX]);
-    void die();
-
-    void move();
+    void move(creature* world[][ho_const::MAX]);
     void breed();
     void starve();
 

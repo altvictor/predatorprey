@@ -49,19 +49,30 @@ void grid::initialize(){
 }
 
 void grid::step(){
+    //move
     for(int i = 0; i < ho_const::MAX; i++){
         for(int j = 0; j < ho_const::MAX; j++){
             if(_world[i][j] == NULL){}//do nothing
-            else if(_world[i][j]->gettype() == 'X'){
-                _world[i][j]->step(_world);
+            else if(_world[i][j]->gettype() == 'X' && _world[i][j]->getturn() == true){
+                _world[i][j]->move(_world);
             }
         }
     }
     for(int i = 0; i < ho_const::MAX; i++){
         for(int j = 0; j < ho_const::MAX; j++){
             if(_world[i][j] == NULL){}//do nothing
-            else if(_world[i][j]->gettype() == 'O'){
-                _world[i][j]->step(_world);
+            else if(_world[i][j]->gettype() == 'O' && _world[i][j]->getturn() == true){
+                _world[i][j]->move(_world);
+            }
+        }
+    }
+
+    //reset turns
+    for(int i = 0; i < ho_const::MAX; i++){
+        for(int j = 0; j < ho_const::MAX; j++){
+            if(_world[i][j] == NULL){}//do nothing
+            else{
+                _world[i][j]->setturn(true);
             }
         }
     }
