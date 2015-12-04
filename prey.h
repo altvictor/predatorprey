@@ -12,7 +12,7 @@ public:
     prey(int row, int col);
 
     void move(creature* world[][ho_const::MAX]);
-    void breed();
+    void breed(creature* world[][ho_const::MAX]);
 
 private:
 

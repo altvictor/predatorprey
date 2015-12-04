@@ -2,6 +2,7 @@
 
 
 #include <iostream>
+#include <ctime>
 #include "creature.h"
 #include "predator.h"
 #include "prey.h"
@@ -9,6 +10,8 @@
 using namespace std;
 
 int main(){
+
+    srand(time(NULL));
 
     grid world;
     world.initialize();

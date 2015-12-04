@@ -7,12 +7,14 @@ SOURCES += main.cpp \
     creature.cpp \
     predator.cpp \
     prey.cpp \
-    grid.cpp
+    grid.cpp \
+    ../../../includes/random/randoms.cpp
 
 HEADERS += \
     creature.h \
     predator.h \
     prey.h \
     grid.h \
-    constants.h
+    constants.h \
+    ../../../includes/random/randoms.h
 

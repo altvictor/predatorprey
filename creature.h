@@ -2,20 +2,28 @@
 #define CREATURE_H
 
 #include <iostream>
-#include <stdlib.h>
-#include <ctime>
+
 #include "constants.h"
+#include "../../../includes/random/randoms.h"
 class grid;
+class spots;
+
 using namespace std;
 
 class creature{
 
 public:
-    creature(int row, int col);
+    creature(int row, int col, char type);
 
     virtual void move(creature* world[][ho_const::MAX]);
-    virtual void breed();
-    virtual void starve();
+    virtual void breed(creature* world[][ho_const::MAX]);
+    virtual void starve(creature* world[][ho_const::MAX]);
+
+    int findblank(creature* world[][ho_const::MAX]);
+    int findother(creature* world[][ho_const::MAX], char type);
+
+    void moveto(creature* world[][ho_const::MAX], int place);
+    void kill(creature* world[][ho_const::MAX], int place);
 
     void settime(int time);
     int gettime();

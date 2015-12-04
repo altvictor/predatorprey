@@ -12,11 +12,11 @@ public:
     predator(int row, int col);
 
     void move(creature* world[][ho_const::MAX]);
-    void breed();
-    void starve();
+    void breed(creature* world[][ho_const::MAX]);
+    void starve(creature* world[][ho_const::MAX]);
 
 private:
-
+    int _starve;
 };
 
 #endif // PREDATOR_H

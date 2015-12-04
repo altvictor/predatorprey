@@ -2,8 +2,6 @@
 #define GRID_H
 
 #include <iostream>
-#include <stdlib.h>
-#include <ctime>
 
 #include "constants.h"
 #include "creature.h"
